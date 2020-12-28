@@ -12,6 +12,7 @@ namespace RealTimeChat.Data
         ValueTask<List<TEntity>> Get(Expression<Func<TEntity, bool>> expression);
         ValueTask<TEntity> FindFirstOrDefault(Expression<Func<TEntity, bool>> expression);
         ValueTask<bool> Create(TEntity entity);
+        ValueTask<bool> Create(IEnumerable<TEntity> entity);
         ValueTask<bool> Update(TEntity entity);
         ValueTask<bool> Update(IEnumerable<TEntity> entity);
         ValueTask<bool> Delete(TEntity entity);

@@ -39,6 +39,12 @@ namespace RealTimeChat.Data
             return await Save();
         }
 
+        public async ValueTask<bool> Create(IEnumerable<TEntity> entity)
+        {
+            await _dbSet.AddRangeAsync(entity);
+            return await Save();
+        }
+
         public virtual async ValueTask<bool> Update(TEntity entity)
         {
             _dbSet.Update(entity);

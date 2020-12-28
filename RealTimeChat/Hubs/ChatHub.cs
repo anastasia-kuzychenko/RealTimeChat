@@ -14,7 +14,7 @@ namespace RealTimeChat.Hubs
         private readonly IRepository<User> userRepo;
         private readonly Semaphore sem = new Semaphore(1, 1);
 
-        private int Count { get; set; } = 0;
+        private static int Count { get; set; } = 0;
 
         public MessageHub(IMessageSaver messageSaver, IRepository<User> userRepo)
         {
@@ -55,16 +55,15 @@ namespace RealTimeChat.Hubs
             }
         }
 
-        public override Task OnDisconnectedAsync(Exception exception)
+        public override async Task OnDisconnectedAsync(Exception exception)
         {
-
             var nickname = Context.Items["Nickname"] as string;
-            Clients.All.OnDisconnected(nickname);
-            messageSaver.SaveMessages(nickname);
+            await Clients.All.OnDisconnected(nickname);
+            await messageSaver.SaveMessages(nickname);
             if (Count == 1)
-                messageSaver.SaveMessages();
+                await messageSaver.SaveMessages();
             Count--;
-            return base.OnDisconnectedAsync(exception);
+            await base.OnDisconnectedAsync(exception);
         }
     }
 }
