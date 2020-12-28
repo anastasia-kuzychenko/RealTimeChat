@@ -1,0 +1,157 @@
+﻿p {
+    margin-bottom: 0
+}
+
+body {
+    background-image: url("https://images.wallpaperscraft.ru/image/svet_bleklyy_fon_85547_1600x1200.jpg");
+    background-size: 100%;
+}
+
+.footer {
+    background: rgb(255 255 255 / 27%);
+}
+
+.chat {
+    display: flex;
+    justify-content: space-between;
+    color: #6d6d6d;
+}
+
+button, input, textarea {
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+}
+
+.form-wrapper {
+    width: 30%;
+    color: #6d6d6d;
+    height: 80%;
+    background: rgb(255 255 255 / 64%);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-wrapper .wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.field-validation-error{
+    color: red;
+}
+
+.login-wrapper, .message-wrapper {
+    flex-wrap: wrap;
+}
+
+.btn-wrapper {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.btn-wrapper button {
+    float: right;
+    width: 30%;
+    justify-content: flex-end
+}
+
+.btn-wrapper button:last-child {
+    margin-right: 10px
+}
+
+.message-wrapper {
+    align-items: flex-start;
+}
+
+.message-wrapper label {
+    margin-right: 15px;
+    width: 10%;
+}
+
+.message-wrapper textarea {
+    width: 80%;
+}
+
+.message-wrapper button {
+    margin-left: auto;
+    margin-top: 15px;
+}
+
+.messages-wrapper {
+    width: 65%;
+    display: block;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 70%;
+    margin-right: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #a9c0d0;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ddded0;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #c3c3bb;
+    }
+
+.messages-wrapper #messages-content {
+    border: 1px solid #000;
+    height: 750px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgb(255 255 255 / 64%);
+    border: 0;
+}
+
+.messages-wrapper .notification {
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.connected {
+    background-color: #c8ff92;
+    color: #408c52;
+}
+
+.disconected {
+    background-color: #ffadad;
+    color: #716262;
+}
+
+.message .message-text {
+    border-radius: 5px;
+    margin-top: 3px;
+    padding: 8px;
+    overflow-wrap: break-word;
+    background-color: #dedede;
+    width: max-content;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.my {
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+    .my .message-text {
+        background-color: #e6e2d5;
+    }
+
+/*background-color: beige; for body*/

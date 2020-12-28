@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model RealTimeChat.Models.User
+
+<section class="chat">
+    <div class="form-wrapper">
+
+        <form id="loginform" asp-antiforgery="true">
+            <div class="wrapper login-wrapper">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                <div>
+                    <label asp-for="Nickname">Nickname: </label>
+                    <input id="nickname" asp-for="Nickname" type="text" placeholder="Input your nickname">
+                </div>
+                <span asp-validation-for="Nickname"></span>
+            </div>
+
+            <div class="wrapper state-wrapper">
+                <p>State:</p>
+                <p id="conState">Disconnected</p>
+                <button id="connectButton" type="button" onclick="connect()">Connect</button>
+            </div>
+        </form>
+
+        <div class="wrapper message-wrapper" id="message-sender">
+            <label for="wrapper message">Text</label>
+            <textarea id="message"></textarea>
+            <button type="button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <div class="messages-wrapper" id="message-box">
+        <div id="messages-content">
+
+        </div>
+    </div>
+
+</section>
+
+<link rel="stylesheet" href="~/css/home-page.css" />
+
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="~/js/signalr.min.js"></script>
+    <script type="text/javascript" src="~/js/scripts.js"></script>
+}
